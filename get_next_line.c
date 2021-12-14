@@ -88,7 +88,7 @@ char	*get_next_line(int fd)
 	static char	*save_read;
 	char		*put_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (NULL);
 	save_read = ft_save_what_i_did_read(fd, save_read);
 	if (!save_read)
